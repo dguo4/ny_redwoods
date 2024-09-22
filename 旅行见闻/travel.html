@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅行见闻</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to the main CSS file -->
+    <link rel="stylesheet" href="section-styles.css"> <!-- Link to the section-specific CSS file -->
+    <style>
+        /* Styles for the post rectangles */
+        .post-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .post-item {
+            display: flex;
+            width: 800px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .post-item:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .post-cover {
+            width: 200px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 20px;
+        }
+
+        .post-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .post-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .post-title:hover {
+            color: #007bff;
+        }
+
+        .post-description {
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 10px;
+        }
+
+        .post-date {
+            font-size: 12px;
+            color: #888;
+            align-self: flex-end;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>旅行见闻</h1>
+    </header>
+    <nav>
+        <a href="../index.html">首页</a>
+        <a href="../旅行见闻/index.html">旅行见闻</a>
+        <a href="../抗战黄埔/index.html">抗战黄埔</a>
+        <a href="../房地产/index.html">房地产</a>
+        <a href="../教育/index.html">教育</a>
+        <a href="../时事政论/index.html">时事政论</a>
+    </nav>
+    <div class="content">
+        <h2>旅行见闻中的文章</h2>
+        <div class="post-list" id="post-list">
+            <!-- Posts will be dynamically inserted here -->
+        </div>
+    </div>
+    <script>
+        // Sample post data for this section. In a real scenario, this would be fetched from a server or file.
+        const posts = [
+            {
+                "title": "北京之旅",
+                "link": "2024-09-02/index.html",
+                "coverImage": "2024-09-02/cover.jpg",
+                "description": "这篇文章记录了我在北京的旅行经历，探访了故宫、长城等著名景点。",
+                "date": "2024-09-02"
+            },
+            {
+                "title": "上海之旅",
+                "link": "2024-09-01/index.html",
+                "coverImage": "2024-09-01/cover.jpg",
+                "description": "上海之旅充满了现代化的都市风貌和丰富的历史文化遗产。",
+                "date": "2024-09-01"
+            }
+            // Add more posts as needed
+        ];
+
+        // Render posts dynamically
+        const postList = document.getElementById('post-list');
+        posts.forEach(post => {
+            // Create the post item container
+            const postItem = document.createElement('div');
+            postItem.className = 'post-item';
+
+            // Create and add the cover image
+            const postCover = document.createElement('img');
+            postCover.src = post.coverImage;
+            postCover.alt = post.title;
+            postCover.className = 'post-cover';
+            postItem.appendChild(postCover);
+
+            // Create the post details container
+            const postDetails = document.createElement('div');
+            postDetails.className = 'post-details';
+
+            // Create and add the post title as a clickable link
+            const postTitle = document.createElement('a');
+            postTitle.href = post.link;
+            postTitle.className = 'post-title';
+            postTitle.textContent = post.title;
+            postDetails.appendChild(postTitle);
+
+            // Create and add the post description
+            const postDescription = document.createElement('p');
+            postDescription.className = 'post-description';
+            postDescription.textContent = post.description;
+            postDetails.appendChild(postDescription);
+
+            // Create and add the post date
+            const postDate = document.createElement('div');
+            postDate.className = 'post-date';
+            postDate.textContent = `发布日期: ${post.date}`;
+            postDetails.appendChild(postDate);
+
+            // Append the post details to the post item container
+            postItem.appendChild(postDetails);
+
+            // Append the post item to the post list container
+            postList.appendChild(postItem);
+        });
+    </script>
+</body>
+</html>

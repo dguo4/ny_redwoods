@@ -1,0 +1,126 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Navigation Bar Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+/* Content Styles */
+.content {
+    margin: 20px;
+    text-align: center;
+}
+
+/* Latest Posts Container */
+#latest-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual Post Styles */
+.post {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.post-title {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.post-title:hover {
+    color: #007bff;
+}
+
+.post-description {
+    font-size: 16px;
+    color: #666;
+    margin-top: 0;
+}
+
+.post-date {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+/* Tag Styles */
+.post-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* Background colors for each tag */
+.tag-旅行见闻 {
+    background-color: #4caf50; /* Green */
+}
+
+.tag-抗战黄埔 {
+    background-color: #f44336; /* Red */
+}
+
+.tag-房地产 {
+    background-color: #2196f3; /* Blue */
+}
+
+.tag-教育 {
+    background-color: #ff9800; /* Orange */
+}
+
+.tag-时事政论 {
+    background-color: #9c27b0; /* Purple */
+}
